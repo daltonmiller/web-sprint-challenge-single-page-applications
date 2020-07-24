@@ -171,6 +171,7 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 justify-content: center;
+
 `
 const TopDiv = styled.div`
 

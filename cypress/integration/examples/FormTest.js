@@ -16,19 +16,19 @@ describe("testing form inputs", () => {
         //testing toppings
         cy.get(':nth-child(4) > input, :nth-child(3) > input, :nth-child(2) > input').check()
         .should("be.checked")
-
+        //test submit
         cy.get('form').submit(onsubmit)
-
+        //test switching pages
         cy.get('[href="/Home"]').click()
         cy.get('[href="/Form"]').click()
         cy.get('[href="/Home"]').click()
         cy.get('[href="/Form"]').click()
-
+        //rechecking name and deleting
         cy.get('#name').type("OJ Simpson")
         .should("have.value", "OJ Simpson")
         .type(" Da Juice").should("have.value", "OJ Simpson Da Juice")
         .clear()
-
+        // checking name error
         cy.contains("must include atleast 2 characters")
         
     })
